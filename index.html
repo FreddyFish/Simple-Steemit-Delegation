@@ -18,10 +18,10 @@
         var confirmTransaction = confirm(steemitUsername + ', you are about to delegate ' + delegationAmount + " SP to " + delegateTo + ".");
         var confirmTransaction_2 = confirm('You will now be re-directed to Steemconnect.com, where you can confirm your delegation.');
 
-        if (confirmTransaction_2 === true) {
+        if (confirmTransaction_2 === true && steemitUsername != "" && delegateTo != "" && delegationAmount != "") {
             window.location.href = "https://v2.steemconnect.com/sign/delegateVestingShares?delegator=" + steemitUsername + "&delegatee=" + delegateTo + "&vesting_shares=" + delegationAmount + " SP";
         } else {
-            alert('You failed! - Please confirm with the "OK" button.');
+            alert('You failed! - Please try again.');
         }
     </script>
 </body>
